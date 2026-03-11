@@ -1,0 +1,73 @@
+/* reset basic spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body styling */
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa;
+    color: #222;
+}
+
+/* header */
+header {
+    background-color: #1f2933;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* navigation bar */
+nav {
+    background-color: #e5e7eb;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* navigation links */
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1f2933;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* main content area */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* section spacing */
+section {
+    margin-bottom: 40px;
+}
+
+/* section titles */
+h2 {
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+/* lists */
+ul, ol {
+    margin-left: 20px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f3f4f6;
+    font-size: 0.9rem;
+    color: #555;
+}
