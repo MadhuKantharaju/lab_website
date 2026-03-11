@@ -1,84 +1,90 @@
 /* reset basic spacing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* body styling */
 body {
-    font-family: "Inter", sans-serif;
-    line-height: 1.6;
-    background-color: #fafafa;
-    color: #222;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+  color: #222;
 }
 
 /* header */
 header {
-    background-color: #1f2933;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+  background-color: #1f2933;
+  color: white;
+  padding: 2rem;
+  text-align: center;
 }
 
 /* navigation bar */
 nav {
-    background-color: #e5e7eb;
-    padding: 1rem;
-    text-align: center;
+  background-color: #e5e7eb;
+  padding: 1rem;
+  text-align: center;
 }
 
 /* navigation links */
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #1f2933;
-    font-weight: 600;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
 }
-
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* main content area */
 main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 /* section spacing */
 section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 /* section titles */
 h2 {
-    margin-bottom: 10px;
-    color: #111827;
+  margin-bottom: 10px;
+  color: #111827;
 }
 
 /* lists */
 ul, ol {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* footer */
 footer {
-    text-align: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f3f4f6;
+  font-size: 0.9rem;
+  color: #555;
+}
 
 /* --- People grid --- */
 .people-section {
   margin-bottom: 40px;
 }
 
+/* Single, canonical people-grid definition (responsive) */
 .people-grid {
   display: grid;
   gap: 1.25rem;
-  /* responsive columns: 1 on small, 2 on medium, 3 on large */
-  grid-template-columns: repeat(1, 1fr);
+  /* auto-fit makes columns adapt and fill available space */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+/* Person card */
 .person-card {
   display: flex;
   align-items: center;
@@ -96,6 +102,7 @@ footer {
   box-shadow: 0 10px 30px rgba(18, 24, 32, 0.08);
 }
 
+/* Person photo */
 .person-photo {
   width: 84px;
   height: 84px;
@@ -126,23 +133,55 @@ footer {
   text-decoration: underline;
 }
 
-/* Responsive layout breakpoints */
+/* PI card tweaks (if you use a separate PI card with .pi-card) */
+.pi-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+  padding: 1.1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 12px;
+}
+.pi-card .person-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+}
+
+/* subgroup title */
+.subgroup-title {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+/* Responsive tweaks */
 @media (min-width: 600px) {
-  .people-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* nothing needed here, auto-fit takes care of columns,
+     but you can adjust spacing if desired */
 }
 
 @media (min-width: 980px) {
-  .people-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .person-card {
     padding: 1rem 1.25rem;
   }
 }
-    padding: 20px;
-    background-color: #f3f4f6;
-    font-size: 0.9rem;
-    color: #555;
+
+@media (max-width: 420px) {
+  .person-card {
+    gap: 0.6rem;
+  }
+  .person-photo {
+    width: 64px;
+    height: 64px;
+  }
+  .pi-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  .pi-card .person-photo {
+    width: 96px;
+    height: 96px;
+  }
 }
