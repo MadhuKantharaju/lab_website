@@ -66,6 +66,81 @@ ul, ol {
 /* footer */
 footer {
     text-align: center;
+
+/* --- People grid --- */
+.people-section {
+  margin-bottom: 40px;
+}
+
+.people-grid {
+  display: grid;
+  gap: 1.25rem;
+  /* responsive columns: 1 on small, 2 on medium, 3 on large */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.person-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(18, 24, 32, 0.04);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.person-card:hover,
+.person-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(18, 24, 32, 0.08);
+}
+
+.person-photo {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #eaeaea;
+}
+
+/* text info */
+.person-name {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.person-role {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.person-contact a {
+  color: #0b66ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.person-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layout breakpoints */
+@media (min-width: 600px) {
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .people-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .person-card {
+    padding: 1rem 1.25rem;
+  }
+}
     padding: 20px;
     background-color: #f3f4f6;
     font-size: 0.9rem;
